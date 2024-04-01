@@ -6,8 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadlessCustom",
-    "build:ci": "ng build --prod"
+    "build:prod": "ng build --configuration production --base-href https://github.com/FreddyArreagaM/Reto3_FullStackCore-Digital-Nao/",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
