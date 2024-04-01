@@ -1,25 +1,26 @@
-name: unit test angular CI
+name: unit test angular CI  # Nombre del flujo de trabajo para las pruebas unitarias en Angular CI.
 
-on:
-  push:
-    branches:
-    - main
+on:  # Define los eventos que activarán este flujo de trabajo.
+  push:  # El evento que activa este flujo de trabajo es un 'push' es decir cada que se suba un cambio (commit).
+    branches:  # Se especifica que solo se activará en ciertas ramas.
+    - main  # El flujo de trabajo se activará solo en la rama principal (main).
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+jobs:  # Define los trabajos que se ejecutarán en este flujo de trabajo.
+  deploy:  # Nombre del trabajo, en este caso, 'deploy'.
+    runs-on: ubuntu-latest  # Indica que el trabajo se ejecutará en la última versión de Ubuntu.
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+    steps:  # Define los pasos que se ejecutarán en este trabajo.
+    - name: Checkout  # Nombre del primer paso, que es el proceso de 'checkout'.
+      uses: actions/checkout@v3  # Utiliza una acción predefinida para realizar el 'checkout' del repositorio en la versión 3.
 
-    - name: Install dependencies
-      run: npm install
+    - name: Setup Node.js  # Nombre del segundo paso, que es la configuración de Node.js.
+      uses: actions/setup-node@v3  # Utiliza una acción predefinida para configurar Node.js en la versión 3.
+      with:  # Especifica los parámetros de configuración para la acción 'setup-node'.
+        node-version: 18  # Configura la versión de Node.js a la 18 para Angular CLI 16.2.
 
-    - name: Run tests
-      run: npm run test:headless
+    - name: Install dependencies  # Nombre del tercer paso, que es la instalación de las dependencias del proyecto.
+      run: npm install  # Ejecuta el comando 'npm install' para instalar las dependencias.
+
+    - name: Run tests  # Nombre del cuarto paso, que es ejecutar las pruebas.
+      run: npm run test:headless  # Ejecuta el comando 'npm run test:headless' para ejecutar las pruebas en modo sin cabeza.
 
