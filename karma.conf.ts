@@ -22,7 +22,7 @@ module.exports = function (config: any) {
         suppressAll: true // removes the duplicated traces
       },
       coverageReporter: {
-        dir: require('path').join(__dirname, './coverage/unit-text-angular-ci-cd'),
+        dir: require('path').join(__dirname, './coverage/unit-test-angular-ci-cd'),
         subdir: '.',
         reporters: [
           { type: 'html' },
