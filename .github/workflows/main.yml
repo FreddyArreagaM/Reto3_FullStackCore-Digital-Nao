@@ -17,6 +17,7 @@ jobs:
           key: modules-${{ hashFiles('package-lock.json') }}
 
       - name: npm install and npm run CI commands
+        working-directory: Reto3_FullStackCore-Digital-Nao
         run: |
           npm i
           npm run test:ci
