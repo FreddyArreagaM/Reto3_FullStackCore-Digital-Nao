@@ -6,7 +6,6 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "build:prod": "ng build --configuration production --base-href https://github.com/FreddyArreagaM/Reto3_FullStackCore-Digital-Nao/",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,

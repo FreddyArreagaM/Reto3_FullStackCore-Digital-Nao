@@ -1,4 +1,4 @@
-name: GitHub Pages
+name: unit test angular CI
 
 on:
   push:
@@ -23,5 +23,3 @@ jobs:
     - name: Run tests
       run: npm run test:headless
 
-    - name: Build
-      run: npm run build:prod
