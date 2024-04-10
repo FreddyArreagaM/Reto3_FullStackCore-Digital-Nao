@@ -1,11 +1,10 @@
-FROM node:alpine
-
-WORKDIR /usr/src/app
-
-COPY . /usr/src/app
-
-RUN npm install -g @angular/cli
-
+# stage 1
+FROM node:latest as node
+WORKDIR /app
+COPY . .
 RUN npm install
+RUN npm run build --prod
 
-CMD ["ng", "serve", "--host", "0.0.0.0","--port", "4200"]
+# stage 2
+FROM nginx:alpine
+COPY --from=node /app/dist/angular-app /usr/share/nginx/html
